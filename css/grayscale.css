@@ -121,6 +121,7 @@ a:focus {
 .navbar-custom .nav li.active a:hover {
     color: #fff;
 }
+}
 
 @media(min-width:768px) {
     .navbar-custom {
@@ -147,7 +148,8 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(../img/intro-bg-2.jpeg) no-repeat bottom center scroll;
+    /*background: url(/Users/mateuszochal/Documents/Personal/Photos/Panoramas/DSC_2522mod5.jpeg) no-repeat bottom center scroll;*/
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -167,6 +169,26 @@ a:focus {
 .intro .intro-body .intro-text {
     font-size: 18px;
 }
+
+
+.my-section {
+    display: table;
+    height: auto;
+    text-align: center;
+    color: #fff;
+    background: no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.my-section .my-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 
 @media(min-width:768px) {
     .intro {
@@ -266,7 +288,7 @@ a:focus {
     padding: 50px 0;
     height: auto;
     color: #fff;
-    background: url(../img/publications-bg.jpg) no-repeat center center scroll;
+    background: /*url(../img/publications-bg.jpg)*/ no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -395,7 +417,7 @@ img.rounded {
   height: 250px;
   width: 250px;
   border-radius: 50%;
-  border: 5px solid #555;
+  border: 7px solid rgba(0.8,0.8,0.8,0.6);
 }
 
 img.rounded-small {
