@@ -38,11 +38,15 @@ p {
     line-height: 1.5;
 }
 
+p.edu {
+    margin: 0 0 0px;
+}
+
 p.small {
-    margin: -25px 0 25px;
+    margin: 0 0 25px;
     font-size: 16px;
     line-height: 1.3;
-    color: rgba(255,255,255,1.);
+    /*color: rgba(255,255,255,1.);*/
 }
 
 @media(min-width:768px) {
@@ -51,11 +55,12 @@ p.small {
         font-size: 20px;
         line-height: 1.6;
     }
+
     p.small {
-        margin: -35px 0 35px;
+        margin: 0 0 35px;
         font-size: 18px;
         line-height: 1.4;
-        color: rgba(255,255,255,1.);
+        /*color: rgba(255,255,255,1.);*/
     }
 }
 
