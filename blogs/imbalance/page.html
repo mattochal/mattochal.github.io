@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Mateusz Ochal">
+
+    <link rel="icon" href="../../img/favicon.png">
+    <title>Mateusz Ochal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100&family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div class="load-nav"></div>
+
+    <!-- Main Section -->
+    <section id="about" class="container content-section text-center my-section my-body">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 blog">
+                <h2 style="text-align: center;">Few-Shot Learning with Class Imbalance</h2>
+                <p>The standard benchmarking procedures of Few-Shot Learning (FSL) methods overlook the class imbalance problem commonly occurring in the real-world. While it is generally understood that class imbalance harms the performance of supervised methods, limited research examines the impact of imbalance on the FSL evaluation task. 
+                </p><p>
+                    Our analysis compares 10 state-of-the-art meta-learning and FSL methods on different imbalance distributions and rebalancing techniques. Our results reveal that: <ol>
+                    <li> Some FSL methods (e.g. DKT, Matching Net, Relation Net) display a natural disposition against imbalance while most other approaches produce a performance drop by up to 15% compared to the balanced task without the appropriate mitigation. </li>
+                    <li> Contrary to popular belief, many meta-learning algorithms will not automatically learn to balance from exposure to imbalanced training tasks. </li>
+                    <li> Classical rebalancing strategies, such as random oversampling, can still be very effective, leading to state-of-the-art performances and should not be overlooked. </li>
+                    <li> FSL methods are more robust against meta-dataset imbalance than imbalance at the task-level with a similar imbalance ratio ($\rho<20$), with the effect holding even in long-tail datasets under a larger imbalance ($\rho=65$). </li>
+                    </ol>
+                </p>
+                <img src="fig1.jpg" class="blog">
+                <img src="fig2.jpg" class="blog">
+                <img src="fig3.jpg" class="blog">
+                <img src="fig8.jpg" class="blog">
+                <p></p>
+
+                <h3 style="text-align: center;">Sources</h3>
+                <div style="text-align: center;">
+                  <div>
+                      <a href="https://openreview.net/forum?id=-vafHc91wO8&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2021%2FWorkshop%2FLearning_to_Learn%2FAuthors%23your-submissions)" class="btn btn-default btn-sm">ICLR Workshop 2020</a>
+                      <a href="https://arxiv.org/pdf/2104.05344" class="btn btn-default btn-sm">arXiv</a>
+                  </div>
+                  <div>
+                      <p class="small">Ochal, Mateusz, Massimiliano Patacchiola, Amos Storkey, Jose Vazquez, and Sen Wang. <br><i>"How Sensitive are Meta-Learners to Dataset Imbalance?"</i><br>ICLR Workshop on Learning to Learn. 2021. </p>
+                  </div>
+                </div>
+                <div style="text-align: center;">
+                  <div>
+                      <a href="https://arxiv.org/pdf/2101.02523.pdf" class="btn btn-default btn-sm">arXiv</a>
+                  </div>
+                  <div>
+                      <p class="small">Ochal, Mateusz, Massimiliano Patacchiola, Amos Storkey, Jose Vazquez, and Sen Wang. <br><i>"Few-Shot Learning with Class Imbalance."</i><br>arXiv preprint arXiv:2101.02523. 2021.</p>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Mateusz Ochal 2021</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
+</html>
