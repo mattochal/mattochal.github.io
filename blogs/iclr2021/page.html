@@ -1,9 +1,30 @@
 <html lang="en">
 
-<!--#include virtual="../head.inc.html" --> 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Mateusz Ochal">
 
+    <link rel="icon" href="../../img/favicon.png">
+    <title>Mateusz Ochal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100&family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
+
+</head>
+
+<!-- BODY -->
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-  <div class="load-nav"></div>
 
   <!-- Main Section -->
   <section id="about" class="container content-section text-center my-section my-body">
@@ -11,7 +32,9 @@
       <div class="col-lg-10 col-lg-offset-1 blog">
         <h2 style="text-align: center;">Highlights from ICLR 2021 conference</h2>
         <h3 style="text-align: center;">Papers</h3>
-        <div style="text-align: center;">
+        <h4 style="text-align: center;">This page is currently being updated.</h4>
+
+        <div style="text-align:center;">
           <div>
             <a href="https://openreview.net/forum?id=D3PcGLdMx0" class="btn btn-default btn-sm">Paper</a>
             <a href="https://iclr.cc/virtual/2021/poster/3256" class="btn btn-default btn-sm">Presentation</a>
@@ -19,12 +42,180 @@
           <div>
             <p class="small">MELR: Meta-Learning via Modeling Episode-Level Relationships for Few-Shot Learning <br><i>Nanyi Fei, Zhiwu Lu, Tao Xiang, Songfang Huang</i></p>
           </div>
-          <p class="small" style="text-align:left;">This work proposes Modeling Episode-Level Relationship (MELR) which trains models by sampling two tasks per learning iteration, instead of one like in standard episodic meta-training. The query and support sets for the two tasks share the same classes but contain different instances.
-          </p>
+          <div class="small-blog-left">
+            <p>This work proposes Modeling Episode-Level Relationship (MELR) which changes the way that tasks are sampled during meta-training and uses Cross-Episode Attention Module (CEAM) and Consistency Regularization (CECR) to improve performance. <p>
+            <p><i>Task-Sampling.</i> trains models by deliberately sampling two tasks per learning iteration, instead of one like in standard episodic meta-training. The query and support sets for the two tasks share the same classes but contain different instances.</p>
+            <p><i>Cross-Episode Attention Module (CEAM) </i>is an attention module over the support sets.</p>
+            <p><i>Cross-Episode Consistency Regularization (CECR) </i>encorages the model to produce similar prototypes across the two episodes.</p>
+            <img src="melr.jpg" class="blog">
+          </div>
         </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=9z_dNsC4B5t" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3313" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">MetaNorm: Learning to Normalize Few-Shot Batches Across Domains<br><i>Yingjun Du, Xiantong Zhen, Ling Shao, Cees G. M. Snoek</i></p>
+          </div>
+          <div class="small-blog-left">
+            <p>This work proposes an alternative to BatchNorm, TaskNorm, Transductive Batch Norm and others. Meta-Norm is a non-trasductive method which learns the Batch Norm statistics via meta-learning.<p>
+            <img src="metanorm.jpg" class="blog">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=Ti87Pv5Oc8" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/2848" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Meta-Learning with Neural Tangent Kernels<br><i>Yufan Zhou, Zhenyi Wang, Jiayi Xian, Changyou Chen, Jinhui Xu</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=-QxT4mJdijq" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/2607" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Meta-Learning Symmetries by Reparameterization<br><i>Allan Zhou, Tom Knowles, Chelsea Finn</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=vujTf_I8Kmc" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3322" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Attentional Constellation Nets for Few-Shot Learning<br><i>Weijian Xu, Yifan Xu, Huaijin Wang, Zhuowen Tu</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=bJxgv5C3sYc" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3163" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Few-Shot Bayesian Optimization with Deep Kernel Surrogates<br><i>Martin Wistuba, Josif Grabocka</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=3jjmdp7Hha" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/2541" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Meta Back-Translation<br><i>Hieu Pham, Xinyi Wang, Yiming Yang, Graham Neubig</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=lgNx56yZh8a" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3334" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Bayesian Few-Shot Classification with One-vs-Each Pólya-Gamma Augmented Gaussian Processes<br><i>Jake Snell, Richard Zemel</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=l-PrrQrK0QR" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3251" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Dataset Meta-Learning from Kernel Ridge-Regression<br><i>Timothy Nguyen, Zhourong Chen, Jaehoon Lee</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=l-PrrQrK0QR" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3183" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Meta-learning with Negative Learning Rates<br><i>Alberto Bernacchia</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=pW2Q2xLwIMD" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/2535" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Few-Shot Learning via Learning the Representation, Provably<br><i>Simon Shaolei Du, Wei Hu, Sham M. Kakade, Jason D. Lee, Qi Lei</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-  <!--#include virtual="../footer.inc.html" --> 
+
+
+  <!-- Footer -->
+  <footer>
+      <div class="container text-center">
+          <p>Copyright &copy; Mateusz Ochal 2021</p>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/grayscale.js"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
 </body>
 </html>
