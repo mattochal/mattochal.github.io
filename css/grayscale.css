@@ -627,5 +627,8 @@ div.small-blog-left > p {
 }
 
 div.topmarg {
-    margin: 0 0 25px;
+    margin: 0 0 25px 0;
+    padding: 20px 0 0 0;
+    border-top: 2px solid rgba(66, 220, 163,.25);
+    /*border-opacity: 0.5;*/
 }

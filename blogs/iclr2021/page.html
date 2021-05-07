@@ -34,7 +34,7 @@
         <h3 style="text-align: center;">Papers</h3>
         <h4 style="text-align: center;">This page is currently being updated.</h4>
 
-        <div style="text-align:center;">
+        <div class="topmarg" style="text-align:center;">
           <div>
             <a href="https://openreview.net/forum?id=D3PcGLdMx0" class="btn btn-default btn-sm">Paper</a>
             <a href="https://iclr.cc/virtual/2021/poster/3256" class="btn btn-default btn-sm">Presentation</a>
@@ -43,10 +43,7 @@
             <p class="small">MELR: Meta-Learning via Modeling Episode-Level Relationships for Few-Shot Learning <br><i>Nanyi Fei, Zhiwu Lu, Tao Xiang, Songfang Huang</i></p>
           </div>
           <div class="small-blog-left">
-            <p>This work proposes Modeling Episode-Level Relationship (MELR) which changes the way that tasks are sampled during meta-training and uses Cross-Episode Attention Module (CEAM) and Consistency Regularization (CECR) to improve performance. <p>
-            <p><i>Task-Sampling.</i> trains models by deliberately sampling two tasks per learning iteration, instead of one like in standard episodic meta-training. The query and support sets for the two tasks share the same classes but contain different instances.</p>
-            <p><i>Cross-Episode Attention Module (CEAM) </i>is an attention module over the support sets.</p>
-            <p><i>Cross-Episode Consistency Regularization (CECR) </i>encorages the model to produce similar prototypes across the two episodes.</p>
+            <p>This work proposes Modeling Episode-Level Relationship (MELR) which changes the way that tasks are sampled during meta-training and uses Cross-Episode Attention Module (CEAM) and Consistency Regularization (CECR) to improve performance. <i>Task-Sampling.</i> trains models by deliberately sampling two tasks per learning iteration, instead of one like in standard episodic meta-training. The query and support sets for the two tasks share the same classes but contain different instances. <i>Cross-Episode Attention Module (CEAM) </i>is an attention module over the support sets. <i>Cross-Episode Consistency Regularization (CECR) </i>encorages the model to produce similar prototypes across the two episodes.</p>
             <img src="melr.jpg" class="blog">
           </div>
         </div>
@@ -76,6 +73,10 @@
             <p class="small">Meta-Learning with Neural Tangent Kernels<br><i>Yufan Zhou, Zhenyi Wang, Jiayi Xian, Changyou Chen, Jinhui Xu</i></p>
           </div>
           <div class="small-blog-left">
+           <p> This work proposes two new methods offering SOTA performance, including on OoD tasks, and robustness against adveserial attacks. Their Meta-RKHS-I algorithm uses two terms: 1) encouraging the models to perform well without adaptation, and 2) encouraging the model to perform large fine-tuning steps to perform fast adaptation. The algorithm is closely related to MAML. Meta-RKHS-II is a closed-form adapation algorithm. The two algorithms are related to each other and their difference between objectives can be bounded.</p>
+           <img src="rkhsI.jpg" class="blog" alt="Meta-RKHS-I">
+           <img src="rkhsII.jpg" class="blog" alt="Meta-RKHS-II">
+           <img src="rkhs_tbl.jpg" class="blog">
           </div>
         </div>
 
@@ -89,6 +90,8 @@
             <p class="small">Meta-Learning Symmetries by Reparameterization<br><i>Allan Zhou, Tom Knowles, Chelsea Finn</i></p>
           </div>
           <div class="small-blog-left">
+            <p>This work proposes Meta-Learning Symmetries by Reparameterization (MSR) which meta-learns equivarient structure to exploit symmartries in the task distribution. (Note: equivarience = varience to the same degree, meaning transformation in the input result in symetric transformations in the output). Conv layers are translation equivarient but are not equivarient natively with rotations, reflections, and scalings. As a result, networks need to be trained through data augmentations, or employ specialized equivariant layers / achitectures. This work proposed MSR, which enforces weight sharing patterns. In the inner loop they only update $v$, keeping $U$ fixed. In the outer-loop they learn equivariance $U$ that learns symetries in the task distributions. MSR is able to learn 2D rotation equivarience, and perform better in augmented FSL tasks (where the query set is the augmented version of the support set).</p>
+            <img src="msr.jpg" class="blog">
           </div>
         </div>
 
@@ -101,7 +104,10 @@
           <div>
             <p class="small">Attentional Constellation Nets for Few-Shot Learning<br><i>Weijian Xu, Yifan Xu, Huaijin Wang, Zhuowen Tu</i></p>
           </div>
-          <div class="small-blog-left">
+          <div class="small-blog-left"><p>
+            Traditional Constellation Model (TCM) extracts key point of interests from an image and uses k-Means clustering to construct a bag-of-visual words. This is then encoded into a shape and modeled by a Gaussian Distribution. This work integrates constellation model into the convolutional neutal networks, which enables the model to discover new visual-words and their relationship. Their constilation modules are inserted after each conv layer, and have two parts: Cell Feature Clustering (CFC, mimics the clustering step in TCM) and Cell Rotation Modelling (CRM, which replaces the shape modelling part in TCM). CRM uses a lot of attention. 
+            <img src="acn_fsl.jpg" class="blog">
+          </p>
           </div>
         </div>
 
@@ -114,7 +120,9 @@
           <div>
             <p class="small">Few-Shot Bayesian Optimization with Deep Kernel Surrogates<br><i>Martin Wistuba, Josif Grabocka</i></p>
           </div>
-          <div class="small-blog-left">
+          <div class="small-blog-left"><p>
+            
+          </p>
           </div>
         </div>
 
@@ -127,7 +135,10 @@
           <div>
             <p class="small">Meta Back-Translation<br><i>Hieu Pham, Xinyi Wang, Yiming Yang, Graham Neubig</i></p>
           </div>
-          <div class="small-blog-left">
+          <div class="small-blog-left"><p>
+            Use meta-training to do multi-lingual translation. 
+          </p>
+            <img src="mbt.jpg" class="blog">
           </div>
         </div>
 
