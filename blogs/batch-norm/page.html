@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Mateusz Ochal">
+
+    <link rel="icon" href="../../img/favicon.png">
+    <title>Mateusz Ochal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100&family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container" >
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav" >
+                    <li class="hidden"> <a href="#page-top"></a> </li>
+                    <li> <a class="page-scroll" href="#s1">1</a> </li>
+                    <li> <a class="page-scroll" href="#s2">2</a> </li>
+                    <li> <a class="page-scroll" href="#s3">3</a> </li>
+                    <li> <a class="page-scroll" href="#s4">4</a> </li>
+                    <li> <a class="page-scroll" href="#s5">5</a> </li>
+                    <li> <a class="page-scroll" href="#s6">6</a> </li>
+                    <li> <a class="page-scroll" href="#s7">7</a> </li>
+                    <li> <a class="page-scroll" href="#s8">8</a> </li>
+                    <li> <a class="page-scroll" href="#s9">9</a> </li>
+                    <li> <a class="page-scroll" href="#s10">10</a> </li>
+                    <li> <a class="page-scroll" href="#s11">11</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="height:5em"></div>
+
+    <section class="container content-section text-center my-section my-body" style="margin: 0; padding: 0;">
+        <div class="col-lg-10 col-lg-offset-1 blog" >
+            <div id="s1" class="topmarg small-blog-left">
+                <h2 style="text-align: center;">BatchNorm in Meta-Learning</h2>
+                <p>
+                    In this blog post, I provide an overview on various Batch Normalization approaches in Meta-Learning. I cover the following:
+                    <ul style='margin-top: -1em'>
+                        <li>BatchNorm (<a href="https://arxiv.org/pdf/1502.03167.pdf">paper</a>), </li>
+                        <!-- <li>BatchRenorm (<a href="https://arxiv.org/pdf/1702.03275.pdf">paper</a>), </li> -->
+                        <li>TaskNorm/MetaBN/TBN (<a href="https://arxiv.org/pdf/2003.03284.pdf">paper</a>), </li>
+                        <li>MetaNorm (<a href="https://openreview.net/pdf?id=9z_dNsC4B5t">paper</a>), </li>
+                        <li>TransNorm (<a href="https://proceedings.neurips.cc/paper/2019/file/fd2c5e4680d9a01dba3aada5ece22270-Paper.pdf">paper</a>), </li>
+                        <li>MAML (<a href="https://arxiv.org/pdf/1703.03400.pdf">paper</a>), </li>
+                        <li>MAML++ (<a href="https://arxiv.org/pdf/1810.09502.pdf">paper</a>), </li>
+                        <li>ProtoMAML (<a href="https://arxiv.org/abs/1903.03096">paper</a>), </li>
+                        <!-- <li>and two recent papers about BatchNorm in general Deep Learning (<a href="https://arxiv.org/pdf/2003.00152.pdf">paper1</a>,<a href="https://arxiv.org/pdf/2105.07576.pdf">paper2</a>).</li> -->
+                    </ul> 
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s2" class="topmarg small-blog-left">
+                <h3>Preliminaries</h3>
+                <h4>Batch Normalization <a class="btn btn-default btn-sm" href="https://arxiv.org/pdf/1502.03167.pdf">paper</a></h4>
+                <p class="hidden">
+                    Batch Normalization (BatchNorm) was proposed to address the so-called <i>internal covariate shift</i> caused by the change of each layer's input distributions, as the parameters of the previous layers are updated during training. The paper draws a similarity to <i>covariate shift</i>. This covarite shift causes the network to become much harder to train as the input distribution changes with time or between the train and test distributions. The idea of the covariate shift can be extended to multi-layer perceptrons where sublayers are broken down into subnetworks, whose outputs are inputs for subsequent subnetworks/layers. As subnetworks' parameters are updated there is a shift in the output distribution and therefore the input distribution for subsequent layers.  To overcome this, batch normalization scales and shifts the input features to have a mean of 0 and variance of 1. However, normalizing the inputs of a layer could change the expresivity of layer (i.e what the layer can represent), therefore, BatchNorm also includes the $\gamma$ and $\beta$ parameters which scales and shifts the normalized value. Infact, these parameters allow the network to reverse the effect of normalization if it is the optimal thing to do - which preserves the network's identity. BatchNorm therefore effectively reduces the internal covariate shift, producing activations with a stable distribution, and speeding up the training (in the number of steps). "Batch Normalization also makes training more resilient to the parameter scale" and parameter initialization (<a href="https://arxiv.org/pdf/1502.03167.pdf">paper</a>). Efficacy of BN stems from smoother loss landscapes (<a href="https://arxiv.org/pdf/1502.03167.pdf">paper</a>).
+                    <br><br><i>KEY:</i> In practice, the BatchNorm also keeps track of the 'global' mean and variance statistics computed using moving averages across the training minibatches. These global statistics are then substituted for the minibatch statistics during inference only, instead of calculating the statistics from test mini-batches. Using the global / running mean and varience during training would actually cause gradient optimization and normalization to counteract eachother.
+                </p>
+                <p>
+                    <ul>
+                        <li>Batch Normalization (BatchNorm) aims to address the <i>internal covariate shift (ICS)</i>.</li>
+                        <li>As the neural network trains, the output feature maps of layers will change their distribution as the network layers are updated.</li>
+                        <li>In turn, subsequent layers in the network have to adjust their weights based on changing input distribution, making training much more difficult.</li>
+                        <li>To overcome this, BatchNorm scales and shifts the input features to have a mean of 0 and variance of 1, therefore, stabilising the activations of a layer throughout the training process.</li>
+                        <li>This is achieved by computing and normalising the features by the mean and variance (a.k.a. moments/statistics) of the batch of layers in a particular layer. </li>
+                        <li>But this, when applied naively, reduces the expressivity (i.e. what the layer can represent) of the layers, so the authors BatchNorm also includes the $\gamma$ and $\beta$ parameters, which scales and shifts the normalised value. </li>
+                        <li>These parameters allow the network to learn to reverse the scaling and shifting operation by statistics if this is the optimal thing to do.</li>
+                        <li>BatchNorm has the effect of smoothing loss landscape (<a href="https://arxiv.org/pdf/1502.03167.pdf">paper</a>), and becoming more resilient to the parameter scale and initialization (<a href="https://arxiv.org/pdf/1502.03167.pdf">paper</a>)</li>
+                        <li>BatchNorm is performed differently during training and testing. We assume that we do not have access to batches of data points during testing. Therefore, during training, we also keep running statistics (calculated by a moving average) over the train batches, and we substitute those statistics for the batch statistics during testing.</li>
+                        <!-- <li></li> -->
+                        <!-- <li></li> -->
+                    </ul>
+                </p>
+                <img src="batchnorm.jpg" class="blog50">
+            </div>
+        </div>
+
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s3" class="topmarg small-blog-left">
+                <h4>BatchNorm Limitations</h4>
+                <p>
+                    BatchNorm's effectivness diminishes when:
+                    <ul>
+                        <li>the batch size is small, </li>
+                        <li>the batch does not consist of i.i.d. samples from the training data.</li>
+                    </ul>
+                </p>
+                <p>
+                    Small batches produce less accurate statistics and higher variance. These inaccuracies are compounded with the depth of the network.
+                </p>
+                <p> 
+                    The i.i.d. assumption breaks, for instance, when the structure of batch changes between the training and inference time. E.g. in contrastive learning scenario, training batches contain positive and negative pairs, but the inference is typically performed on one sample at a time. This could make the network learn certain biases about the structure of the input data, and perform suboptimally during inference.
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s3" class="topmarg small-blog-left">
+                <h4>Batch Re-normalization</h4>
+                <p>
+                    BatchRenorm is an extension of BatchNorm that computes the forward pass of the training step using only one sample and is identical to that used during inference. It draws similirities from the mini-batch statistics to the estimates of the global statistics using affine transforms ($r=\sigma_{B}/\sigma$ and $d=(\mu_{B}-\mu)/\sigma$). If $\sigma = E[\sigma_{B}]$ and $\mu = E[\mu_{B}]$, then $E[r] = 1$ and $E[d] = 0$, w.r.t mini-batch $B$. In BatchNorm, $r=1$ and $d=0$.
+                </p>
+                <img src="batchrenorm.jpg" class="blog50">
+            </div>
+        </div> -->
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s4" class="topmarg small-blog-left">
+                <h4>InstanceNorm <a href="https://arxiv.org/pdf/1607.08022.pdf" class="btn btn-default btn-sm" target="_blank">paper</a> vs LayerNorm <a href="https://arxiv.org/pdf/1607.06450.pdf" class="btn btn-default btn-sm" target="_blank">paper</a> vs GroupNorm <a href="https://arxiv.org/pdf/1803.08494.pdf" class="btn btn-default btn-sm" target="_blank">paper</a></h4>
+                <img src="groupnorm.jpg" class="blog">
+                <img src="batchnorm_low.jpg" class="blog50" >
+                <img src="layernorm_low.jpg" class="blog50" >
+                <img src="instancenorm_low.jpg" class="blog50" >
+            </div>
+        </div>
+
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s5" class="topmarg small-blog-left">
+                <h4>Meta-Learning <a href="https://lilianweng.github.io/lil-log/2018/11/30/meta-learning.html" class="btn btn-default btn-sm" target="_blank">More Details</a></h4>
+                <p>In meta-learning, a model is trained over a variety of learning tasks and optimized for the best performance on a distribution of tasks.</p>
+                <p>In a $k$-shot $n$-way task:
+                <ul>
+                    <li>small training set (called support set, S), containing $n \times k$ samples</li>
+                    <li>small evaluation set (called query set, Q), containing different samples of the same n classes.</li>
+                </ul>
+                </p>
+                <p>
+                    Goal: to minimise some loss over the query set. 
+                </p>
+                <p>The meta-learner trains using outer-loop optimization. Task adaptation is performed during the inner-loop.<ul></ul></p>
+                <img src="metalearn.jpg" class="blog">
+            </div>
+        </div>
+
+
+        <!-- <div class="col-lg-10 col-lg-offset-1 blog"><div style="height:20em"></div></div> -->
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s6" class="topmarg small-blog-left">
+                <h3>Applying BatchNorm in Meta-Learning</h3>
+                <h4>Conventional BatchNorm</h4>
+                <p>
+                    <ul>
+                        <li>Substitute in tasks for batches.</li>
+                        <li>But this breaks the i.i.d. assumption because the training and testing data come from different distributions.</li>
+                        <li>Also within a fixed $k$-shot $n$-way tasks follow a specific distribution which could result in poorer generalization to different $k$-shot $n$-way tasks. </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s7" class="topmarg small-blog-left">
+                <h4>Transductive BatchNorm</h4>
+                <p>
+                    <ul> 
+                        <li>Instead of applying the running mean and variance during meta-testing, calculate the statistics using the whole test task (support and query set).</li>
+                        <li>Used in MAML, VERSA</li>
+                        <li>Trasnductive - assumes access to the whole query set during inference as an unlabelled set.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s8" class="topmarg small-blog-left">
+                <h4>Meta BatchNorm</h4>
+                <p>
+                    <ul> 
+                        <li>Similar to Transductive BatchNorm, but only uses the support set to calculate the statistics for both the support and query set.</li>
+                        <li>Used in ProtoMAML.</li>
+                        <li>This is problematic with smaller support set sizes (e.g. in 1-shot setting) which yield higher variance (similar degrading effect as small batch sizes).</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s9" class="topmarg small-blog-left">
+                <h4>MAML++ (Per-Step BatchNorm) <a href="https://arxiv.org/pdf/1810.09502.pdf" class="btn btn-default btn-sm" target="_blank">paper</a></h4>
+                <p>
+                    <ul>
+                        <li>Use running statistics instead of the batch statistics for normalization for both meta-training and meta-testing.</li>
+                        <li>The statistics are also learnt separately for each inner-loop step.</li>
+                        <li>The intuition behind this is that the inner loop drives the weights away from the initial parametrization; thus, the true statistics are likely to deviate from the pre-inner-loop parameter space.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s10" class="topmarg small-blog-left">
+                <h4>TaskNorm <a href="https://arxiv.org/pdf/2003.03284.pdf" class="btn btn-default btn-sm" target="_blank">paper</a></h4>
+                <p>
+                    <ul>
+                        <li>In TaskNorm, statistics are combined using a combination of Meta BatchNorm and Instance/Layer Norm.</li>
+                        <li>The amount by which the batch-norm statistics are used are dictated by the $\alpha=SIGMOID(SCALE \times |S| + OFFSET)$</li>
+                        <li>Assumes the normalised features are Gaussian distributed.</li>
+                    </ul>
+                </p>
+                <img src="tasknorm.jpg" class="blog50">
+            </div>
+        </div>
+
+        <!-- <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s10" class="topmarg small-blog-left">
+                <h4>Transferable Normalization (TransNorm) <a href="https://papers.nips.cc/paper/2019/file/fd2c5e4680d9a01dba3aada5ece22270-Paper.pdf" class="btn btn-default btn-sm" target="_blank">paper</a></h4>
+                <p>
+                    TransNorm was proposed for mainsteam DNN-based domain adaption methods. Source and target statistics are going to be different for domain-shift tasks, therefore, TransNorm applies domain-specific statistics to the target data. In a little bit more detail, TransNorm is an end-to-end trainable layer to make DNNs more transferable across domains" without introducing any paramters or hyperparameters into the neural network. Source statistics in channels are weighted differently depending on how the channels are transferable to the target domain. This domain-adaption tasks often assume access to the target domain, which is often inaccessible in meta-learning. 
+                </p> -->
+                    <!-- <img src="transnorm.jpg" class="blog"> -->
+
+                    <!-- <h4>Conditional BatchNorm <a href="https://arxiv.org/pdf/1707.00683.pdf" class="btn btn-default btn-sm" target="_blank">paper</a> </h4>
+                    <p>
+                        Conditional BatchNorm was applied to language-vision tasks. Conditional batch norm was used in Tadam: Task dependent adaptive metric for improved few-shot learning. https://arxiv.org/pdf/2001.08735.pdf 
+                    </p> -->
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s11" class="topmarg small-blog-left">
+                <h4>MetaNorm <a href="https://openreview.net/pdf?id=9z_dNsC4B5t" class="btn btn-default btn-sm" target="_blank">paper</a></h4>
+                <p>
+                    <li>In MetaNorm, the statistics are inferred for new tasks based on the support set by leveraging the amortized inference technique, and using hypernetworks to generate the statistics for BatchNorm. </li>
+                    <li>A function $f$ transforms the activation maps for each individual sample, and outputs an inferred statistics. </li>
+                    <li>The average is calculated over all the inferred statistics to generate more accurate statistics. The networks $f$ are MLPs, one for each layer in the network (shared across channels), and generate the support and query moments during meta-training.</li>
+                </p>
+                <img src="metanorm_mu.jpg" class="blog">
+                <img src="metanorm_sigma.jpg" class="blog">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Mateusz Ochal 2021</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../../js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/grayscale.js"></script>
+
+</body>
+
+</html>

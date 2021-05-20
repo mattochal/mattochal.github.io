@@ -111,20 +111,6 @@
           </div>
         </div>
 
-        <!-- -------------------------------------------------------------------------------- -->
-        <div class="topmarg" style="text-align:center;">
-          <div>
-            <a href="https://openreview.net/forum?id=bJxgv5C3sYc" class="btn btn-default btn-sm">Paper</a>
-            <a href="https://iclr.cc/virtual/2021/poster/3163" class="btn btn-default btn-sm">Presentation</a>
-          </div>
-          <div>
-            <p class="small">Few-Shot Bayesian Optimization with Deep Kernel Surrogates<br><i>Martin Wistuba, Josif Grabocka</i></p>
-          </div>
-          <div class="small-blog-left"><p>
-            
-          </p>
-          </div>
-        </div>
 
         <!-- -------------------------------------------------------------------------------- -->
         <div class="topmarg" style="text-align:center;">
@@ -145,6 +131,69 @@
         <!-- -------------------------------------------------------------------------------- -->
         <div class="topmarg" style="text-align:center;">
           <div>
+            <a href="https://openreview.net/forum?id=l-PrrQrK0QR" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3183" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Meta-learning with Negative Learning Rates<br><i>Alberto Bernacchia</i></p>
+          </div>
+          <div class="small-blog-left"><p>
+            This work shows that setting a negative learning rate in the inner loop of MAML leads to bettwe performance on linear and non-linear regression tasks. 
+            <img src="neg_lr.jpg" class="blog">
+          </p>
+          </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=CR1XOQ0UTh-" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/2801" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Contrastive Learning with Hard Negative Samples<br><i>Joshua Robinson, Ching-Yao Chuang, Suvrit Sra, Stefanie Jegelka</i></p>
+          </div>
+          <div class="small-blog-left"><p>
+            The idea in contrastive learning is to sample positive and negative pairs of images with respect to some anchor image, and optimize the feature extractor / classifier by driving the feature representations of negative-anchor pairs away from each other, while driving the feature representations of positive-anchor pairs closer together. The pairs are commonly sampled uniformily at random. The papar points out this that this is redundent in situations where the feature extractor has already learned to appropiately drive the representations closer/futher away for positive/negative pairs. This provides little useful gradient signal since the problem is already effectily solved for those samples. In this work, the authors propose a way for the model to focus on the "hard" negative samples which the model is currently wrong on. The hardness is solved by the inner dot product (cosine distance) such that closer the points are to the anchor point the more frequently they appear. The strength of 'hardness' is scaled by the parameter $\beta$ and is also conditions on class labels (approximated by the Positive Unlabelled learning) since some classes are supposed to appear closer to the anchor than others. 
+            <img src="contrast.jpg" class="blog">
+          </p>
+          </div>
+
+
+          <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=vYeQQ29Tbvx" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3292" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Contrastive Learning with Hard Negative Samples<br><i>Joshua Robinson, Ching-Yao Chuang, Suvrit Sra, Stefanie Jegelka</i></p>
+          </div>
+          <div class="small-blog-left"><p>
+            BatchNorm Learns sparse representations.
+            <img src="contrast.jpg" class="blog">
+          </p>
+          </div>
+        </div>
+
+          
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=pW2Q2xLwIMD" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/2535" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Few-Shot Learning via Learning the Representation, Provably<br><i>Simon Shaolei Du, Wei Hu, Sham M. Kakade, Jason D. Lee, Qi Lei</i></p>
+          </div>
+          <div class="small-blog-left">
+          </div>
+        </div>
+
+
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
             <a href="https://openreview.net/forum?id=lgNx56yZh8a" class="btn btn-default btn-sm">Paper</a>
             <a href="https://iclr.cc/virtual/2021/poster/3334" class="btn btn-default btn-sm">Presentation</a>
           </div>
@@ -152,6 +201,22 @@
             <p class="small">Bayesian Few-Shot Classification with One-vs-Each Pólya-Gamma Augmented Gaussian Processes<br><i>Jake Snell, Richard Zemel</i></p>
           </div>
           <div class="small-blog-left">
+          </div>
+        </div>
+
+        
+        <!-- -------------------------------------------------------------------------------- -->
+        <div class="topmarg" style="text-align:center;">
+          <div>
+            <a href="https://openreview.net/forum?id=bJxgv5C3sYc" class="btn btn-default btn-sm">Paper</a>
+            <a href="https://iclr.cc/virtual/2021/poster/3163" class="btn btn-default btn-sm">Presentation</a>
+          </div>
+          <div>
+            <p class="small">Few-Shot Bayesian Optimization with Deep Kernel Surrogates<br><i>Martin Wistuba, Josif Grabocka</i></p>
+          </div>
+          <div class="small-blog-left"><p>
+            
+          </p>
           </div>
         </div>
 
@@ -168,33 +233,9 @@
           </div>
         </div>
 
-        <!-- -------------------------------------------------------------------------------- -->
-        <div class="topmarg" style="text-align:center;">
-          <div>
-            <a href="https://openreview.net/forum?id=l-PrrQrK0QR" class="btn btn-default btn-sm">Paper</a>
-            <a href="https://iclr.cc/virtual/2021/poster/3183" class="btn btn-default btn-sm">Presentation</a>
-          </div>
-          <div>
-            <p class="small">Meta-learning with Negative Learning Rates<br><i>Alberto Bernacchia</i></p>
-          </div>
-          <div class="small-blog-left">
-          </div>
         </div>
-
-        <!-- -------------------------------------------------------------------------------- -->
-        <div class="topmarg" style="text-align:center;">
-          <div>
-            <a href="https://openreview.net/forum?id=pW2Q2xLwIMD" class="btn btn-default btn-sm">Paper</a>
-            <a href="https://iclr.cc/virtual/2021/poster/2535" class="btn btn-default btn-sm">Presentation</a>
-          </div>
-          <div>
-            <p class="small">Few-Shot Learning via Learning the Representation, Provably<br><i>Simon Shaolei Du, Wei Hu, Sham M. Kakade, Jason D. Lee, Qi Lei</i></p>
-          </div>
-          <div class="small-blog-left">
-          </div>
-        </div>
-
       </div>
+
     </div>
   </section>
 

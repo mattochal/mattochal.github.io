@@ -66,6 +66,7 @@ p.small {
 
 .blog {
     text-align: left;
+    position: relative;
 }
 
 a {
@@ -197,6 +198,7 @@ a:focus {
 .my-section {
     display: table;
     height: auto;
+    height: 100%;
     text-align: center;
     color: #fff;
     background: no-repeat bottom center scroll;
@@ -311,7 +313,6 @@ a:focus {
     padding: 50px 0;
     height: auto;
     color: #fff;
-    background: /*url(../img/publications-bg.jpg)*/ no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -464,13 +465,13 @@ footer p {
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: rgba(255,255,255,.2);
+    background: rgba(255,255,255,.5);
 }
 
 ::selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: rgba(255,255,255,.2);
+    background: rgba(255,255,255,.5);
 }
 
 img::selection {
@@ -501,7 +502,36 @@ img.blog {
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
+    text-align:center;
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+img.blog75 {
+  height: auto;
+  width: 75%;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+    text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.blog50 {
+  height: auto;
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+    text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
@@ -626,9 +656,33 @@ div.small-blog-left > p {
     }
 }
 
+div.space {
+    margin-top: 15em;
+    height: 3em;
+    /*background: no-repeat center center scroll;
+  -webkit-animation-name: move;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: right;
+  -webkit-animation-timing-function: linear;*/
+}
+
+div.small-blog-left > h1, h3, h2, h4, img {
+    margin: 1.5em 0 1em;
+    text-align:center;
+  /*position: relative;*/
+}
+
 div.topmarg {
-    margin: 0 0 25px 0;
-    padding: 20px 0 0 0;
-    border-top: 2px solid rgba(66, 220, 163,.25);
+    margin: 5em 0em 0em 0em;
+    padding: 5em 0em 0em 0em;
+    /*margin: 15em 2em 15em 2em;*/
+    /*padding: 5em 2em 5em 2em;*/
+    /*border: 1px solid rgba(66, 220, 163,.25);*/
+    border-top: 4px solid rgba(66, 220, 163,.25);
     /*border-opacity: 0.5;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*margin: 0;*/
+  /*position: absolute;*/
 }

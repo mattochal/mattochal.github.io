@@ -1,0 +1,820 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"set",
+				"set_phase"
+			],
+			[
+				"phase",
+				"phasename"
+			],
+			[
+				"base",
+				"baseline"
+			],
+			[
+				"FSL",
+				"FSLTask"
+			],
+			[
+				"Con",
+				"ContinualFSLTask"
+			],
+			[
+				"task_",
+				"task_argparser"
+			],
+			[
+				"all",
+				"all_idxs"
+			],
+			[
+				"set_",
+				"set_trace"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"clear",
+				"clear_images"
+			],
+			[
+				"image",
+				"image_data"
+			],
+			[
+				"dra",
+				"draw_images"
+			],
+			[
+				"out",
+				"output_samples_frame"
+			],
+			[
+				"num",
+				"num_output_columns"
+			],
+			[
+				"al",
+				"algorithm_names"
+			],
+			[
+				"max",
+				"max_labelled_num_images_per_class"
+			],
+			[
+				"con",
+				"conf_matrix_frame"
+			],
+			[
+				"de",
+				"deselect"
+			],
+			[
+				"conf",
+				"conf_matrix"
+			],
+			[
+				"model",
+				"model_name"
+			],
+			[
+				"resample",
+				"resample_supports"
+			],
+			[
+				"num_",
+				"num_correct"
+			],
+			[
+				"nu",
+				"num_correct_rows"
+			],
+			[
+				"en",
+				"enumerate"
+			],
+			[
+				"sel",
+				"selected"
+			],
+			[
+				"se",
+				"selected"
+			],
+			[
+				"mat",
+				"matrix_frame"
+			],
+			[
+				"self",
+				"self"
+			],
+			[
+				"column",
+				"columnspan"
+			],
+			[
+				"as",
+				"astype"
+			],
+			[
+				"C",
+				"ConnectionResetError"
+			],
+			[
+				"wait",
+				"wait_for_response"
+			],
+			[
+				"sele",
+				"selected_supports"
+			],
+			[
+				"next",
+				"next_episode"
+			],
+			[
+				"reset",
+				"reset_task"
+			],
+			[
+				"class",
+				"classify"
+			],
+			[
+				"ini",
+				"init_with_server"
+			],
+			[
+				"el",
+				"enable"
+			],
+			[
+				"ene",
+				"enabled"
+			],
+			[
+				"is",
+				"is_at_least_one_selected"
+			],
+			[
+				"image_",
+				"image_buttons"
+			],
+			[
+				"cla",
+				"classes"
+			],
+			[
+				"crop",
+				"crop_points"
+			],
+			[
+				"gri",
+				"grid_coords"
+			],
+			[
+				"gr",
+				"grid"
+			],
+			[
+				"g",
+				"grid_coords"
+			],
+			[
+				"ob",
+				"object_count"
+			],
+			[
+				"im",
+				"image_generator"
+			],
+			[
+				"n",
+				"n_of_files"
+			],
+			[
+				"Image",
+				"ImageGenerator"
+			],
+			[
+				"Im",
+				"ImageGenerator"
+			],
+			[
+				"new",
+				"new_filename"
+			],
+			[
+				"save",
+				"save_path_image"
+			],
+			[
+				"ima",
+				"imagepath"
+			],
+			[
+				"cro",
+				"crop_points"
+			],
+			[
+				"obje",
+				"objects"
+			],
+			[
+				"imaeg",
+				"image_generator"
+			],
+			[
+				"key",
+				"key_press"
+			],
+			[
+				"file",
+				"filenames"
+			],
+			[
+				"bb",
+				"bbs"
+			],
+			[
+				"obj",
+				"object_flag"
+			],
+			[
+				"ex",
+				"excluded"
+			],
+			[
+				"glo",
+				"global"
+			],
+			[
+				"edi",
+				"edit_mode"
+			],
+			[
+				"coun",
+				"count_history"
+			],
+			[
+				"add",
+				"add_mode"
+			],
+			[
+				"ne",
+				"next_image"
+			],
+			[
+				"crea",
+				"create_rectangle"
+			],
+			[
+				"b",
+				"bounding"
+			],
+			[
+				"path",
+				"path_out"
+			],
+			[
+				"s",
+				"square"
+			],
+			[
+				"def",
+				"defaultdict"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
+				"inter",
+				"_interest_rate"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"the",
+				"theta"
+			],
+			[
+				"frame",
+				"frame2"
+			],
+			[
+				"fr",
+				"frame2"
+			],
+			[
+				"thr",
+				"thresholded_image"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"weights3",
+				"weights_3_linear"
+			],
+			[
+				"BA",
+				"BACKWARD"
+			],
+			[
+				"mo",
+				"motor_R_acc"
+			],
+			[
+				"ba",
+				"backward_direction"
+			],
+			[
+				"ac",
+				"actual_dir"
+			],
+			[
+				"j",
+				"json_input"
+			],
+			[
+				"ta",
+				"n_of_tasks"
+			],
+			[
+				"re",
+				"releases"
+			],
+			[
+				"job",
+				"job_size"
+			],
+			[
+				"va",
+				"values"
+			],
+			[
+				"sta",
+				"start"
+			],
+			[
+				"n_o",
+				"n_of_tasks"
+			],
+			[
+				"jo",
+				"job_start"
+			],
+			[
+				"te",
+				"thevars"
+			],
+			[
+				"co",
+				"coefs"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"bi",
+				"big_const"
+			],
+			[
+				"nb",
+				"nbjobs"
+			],
+			[
+				"t",
+				"timesteps"
+			],
+			[
+				"lin_",
+				"lin_expr"
+			],
+			[
+				"ind",
+				"ind1"
+			],
+			[
+				"time",
+				"timeline"
+			],
+			[
+				"reso",
+				"res_job_assign"
+			],
+			[
+				"res_",
+				"res_job_assign"
+			],
+			[
+				"or",
+				"job_order_"
+			],
+			[
+				"si",
+				"sizes"
+			],
+			[
+				"r",
+				"resource"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"Th",
+				"theta1"
+			],
+			[
+				"th",
+				"Theta2"
+			],
+			[
+				"T",
+				"Theta1"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"fil",
+				"file_line"
+			],
+			[
+				"fi",
+				"file_line"
+			],
+			[
+				"im_",
+				"im_path"
+			],
+			[
+				"resjob",
+				"resjobtime"
+			],
+			[
+				"st",
+				"startendjob"
+			],
+			[
+				"tim",
+				"timesteps"
+			],
+			[
+				"run",
+				"running"
+			],
+			[
+				"ti",
+				"timeTick"
+			],
+			[
+				"pritn",
+				"printStatus"
+			],
+			[
+				"tick",
+				"timeTick"
+			],
+			[
+				"e",
+				"elapsed"
+			],
+			[
+				"res",
+				"Resource"
+			],
+			[
+				"R",
+				"ResourceNotUsedByTask"
+			],
+			[
+				"Re",
+				"ResourceFull"
+			],
+			[
+				"v",
+				"volatile"
+			],
+			[
+				"ser",
+				"servo_pos"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "Package Control: in",
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mateuszochal/Downloads/generator.py",
+		"/Users/mateuszochal/Downloads/IEEEtran 3/bare_jrnl_compsoc.tex",
+		"/Users/mateuszochal/Desktop/Cover Letter - Mateusz Ochal.txt",
+		"/Users/mateuszochal/Desktop/talks.txt",
+		"/Users/mateuszochal/Documents/University/PhD/imbalanced_fsl_dev/demo_fsl_dev/client.py",
+		"/Users/mateuszochal/Documents/University/PhD/imbalanced_fsl_dev/src/utils/utils.py",
+		"/Users/mateuszochal/Documents/University/PhD/imbalanced_fsl/imbalanced_fsl_dev/src/test2.py",
+		"/Users/mateuszochal/Documents/University/PhD/imbalanced_fsl/imbalanced_fsl_dev/src/test3.py",
+		"/Users/mateuszochal/Desktop/code/src/models/btaml.py",
+		"/Users/mateuszochal/Desktop/Mateusz Ochal's CV (Facebook) (V3) (Version 265)/adcv.cls",
+		"/Users/mateuszochal/Desktop/Mateusz Ochal's CV (Facebook) (V3) (Version 260)/adcv.cls",
+		"/Users/mateuszochal/Desktop/Mateusz Ochal's CV (Facebook) (V3) (Version 260)/main.tex",
+		"/Users/mateuszochal/Downloads/Submission 3212/3212\\Supplementary 3212/ICML-3212-MAML-Margins-Code/README.md",
+		"/Users/mateuszochal/Desktop/supplementary_material/code/README.md",
+		"/Users/mateuszochal/Desktop/splitPDF.py",
+		"/Users/mateuszochal/Downloads/[ICML 2021] Few-Shot Learning with Class Imbalance (Version 627)/icml2021_conference.tex",
+		"/Users/mateuszochal/Documents/University/PhD/notes/plan_imbalanced1.text",
+		"/Users/mateuszochal/Documents/University/PhD/notes/20200118.txt",
+		"/var/folders/6g/cqdfd0x53896v28n3285tj140000gn/T/TemporaryItems/NSIRD_screencaptureui_Yo7tjA/Screenshot 2021-02-04 at 11.47.22.png",
+		"/Users/mateuszochal/xcode-uninstall.sh",
+		"/Users/mateuszochal/Documents/University/PhD/notes/20210114.txt",
+		"/Users/mateuszochal/Desktop/20210104.txt",
+		"/Users/mateuszochal/Desktop/uni",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/cfsl_mindspore/src/models/backbones.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/cfsl_mindspore/src/utils/utils.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/backbones/convnet.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/models/model_template.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/models/protonet.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/utils/utils.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/train.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/utils/ioutils.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/utils/argparser.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/backbones/conv4.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/csfl_framework/src/models/backbones.py",
+		"/Users/mateuszochal/Documents/University/PhD/underwater_fsc_dev/demo/demo_ifsl.py",
+		"/Users/mateuszochal/Documents/University/PhD/underwater_fsc_dev/src/datasets/dataset_utils.py",
+		"/Users/mateuszochal/Documents/University/PhD/underwater_fsc_dev/src/datasets/dataset_template.py",
+		"/Users/mateuszochal/Documents/University/PhD/underwater_fsc_dev/src/utils/utils.py",
+		"/Users/mateuszochal/Documents/University/Personal/explorer-central-data/0x1ec698d3/record",
+		"/Users/mateuszochal/Documents/University/Personal/explorer-central-data/0x1ec698d3/sources",
+		"/Users/mateuszochal/Documents/University/PhD/underwater_fsc_dev/demo/demo_client.py",
+		"/Users/mateuszochal/Documents/University/PhD/mindspore/shared/main.py",
+		"/Users/mateuszochal/Desktop/code/README.md",
+		"/Users/mateuszochal/Desktop/car_questions.txt",
+		"/Users/mateuszochal/Documents/University/PhD/imbalanced_fsl_paper/get_results.sh",
+		"/Users/mateuszochal/Documents/University/PhD/incremental-fsl-pytorch-framework/models/gpshot/gpshotpp.py",
+		"/Users/mateuszochal/Documents/University/PhD/incremental-fsl-pytorch-framework/demo/demo_client.py",
+		"/Users/mateuszochal/Documents/University/PhD/incremental-fsl-pytorch-framework/models/gpshot/gpshot.py",
+		"/Users/mateuszochal/Desktop/jobs_completed.txt",
+		"/Users/mateuszochal/Desktop/jobs_completed_hours.py",
+		"/Users/mateuszochal/Documents/University/PhD/appraisals/appraisal_2020_template/Bibliography/nlp.bib",
+		"/Users/mateuszochal/Desktop/Factfulness Quiz",
+		"/Users/mateuszochal/Documents/University/PhD/incremental-fsl-pytorch-framework/demo/scalable_window.py",
+		"/Users/mateuszochal/Documents/University/PhD/incremental-fsl-pytorch-framework/data/my_dataset.py",
+		"/Users/mateuszochal/Documents/University/PhD/datasets/cifar100.py",
+		"/Users/mateuszochal/Documents/University/PhD/datasets/slim_imagenet-copy.py",
+		"/Users/mateuszochal/Downloads/10.1007_978-3-030-30484-3_38.bib",
+		"/Users/mateuszochal/Documents/University/PhD/demo/echo_client.py",
+		"/Users/mateuszochal/Documents/University/PhD/demo/echo_server.py",
+		"/Users/mateuszochal/Documents/University/PhD/demo/demo_client.py",
+		"/Users/mateuszochal/Documents/University/PhD/demo/client.py",
+		"/Users/mateuszochal/Documents/University/PhD/demo/server.py",
+		"/Users/mateuszochal/Documents/University/PhD/demo/demo_ifsl.py",
+		"/Users/mateuszochal/Documents/University/PhD/datasets/fashion_mnist.py",
+		"/Users/mateuszochal/Documents/University/PhD/demo/demo.py",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/oceans2020_abstract/I only care about:",
+		"/Users/mateuszochal/Downloads/S0029801817303190.txt",
+		"/Users/mateuszochal/Desktop/Ideas from papers",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/latex/figs/graphs_pdf_csv/fish-recognition-full-FSL.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/latex/figs/graphs_pdf_csv/fish-recognition-full-TL-FSL.csv",
+		"/Users/mateuszochal/Desktop/Ibiza 1-5 Sept (useful links)",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/code/verify_bounding_boxes.py",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/textfiles/280719.txt",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/textfiles/cmds",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/textfiles/python-snipits",
+		"/Users/mateuszochal/Documents/University/4th Year/RRP/challenges.tex",
+		"/Users/mateuszochal/Documents/University/4th Year/RRP/background.tex",
+		"/Users/mateuszochal/Documents/University/4th Year/RRP/rrr/detection.tex",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/code/crop_images.py",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/code/create_bounding_boxes.py",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/code/imageiteratorapp.py",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/images_20180722040611007/retinanet_bounding_all.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/images_20180722040611007/bounding_boxes_tmp.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/images_20180722040611007/bounding_image_new_tmp.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/eiva_boxed/new_bounding.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/eiva_boxed_filtered/Pipeline/bounding_boxes_none.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/eiva_boxed_filtered/best_bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/eiva_boxed/bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva/eiva_boxed_filtered/bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_images/bounding_image_new.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/images_20180717220103000/bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/images_20180717220103000/bounding_boxes_new.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/images_20180717220103000/new_bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/images_20180717203100003/bounding_boxes.csv",
+		"/Users/mateuszochal/Desktop/images_20180717203100003/bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_boxed/bounding_boxes.csv",
+		"/Users/mateuszochal/Desktop/test.py",
+		"/Users/mateuszochal/Desktop/utils.py",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_boxed/Pipeline/bounding_boxes_pipeline.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_boxed/Field Joint/bounding_boxes_field_joints.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_boxed/Stabilisation (Mattress)/bounding_boxes_mattress.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_boxed/Stabilisation (Groutbag)/bounding_boxes_groutbag.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_boxed/Anode/bounding_boxes_anode.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_cropped/bounding_boxes.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/data/eiva_cropped/Damage/bounding_boxes_damage.csv",
+		"/Users/mateuszochal/Documents/University/4th Year/MSc/Mateusz/flat-easy/Mission1/results1/Mission.metadata.new_version",
+		"/Users/mateuszochal/Desktop/Mateusz/zero_h5_pings_new.py",
+		"/Volumes/Seagate Backup Plus Drive/Mateusz/zero_h5_pings_new.py",
+		"/Volumes/Seagate Backup Plus Drive/Mateusz/h5utils.py",
+		"/Volumes/Seagate Backup Plus Drive/Mateusz/flat-easy/Mission7/results2/Mission.metadata.new_version",
+		"/Users/mateuszochal/Desktop/kowsi/results/us.csv",
+		"/Users/mateuszochal/Desktop/Mateusz/h5utils.py",
+		"/Users/mateuszochal/Desktop/savevid.py",
+		"/Users/mateuszochal/Desktop/openvid.py",
+		"/Users/mateuszochal/Desktop/openvid",
+		"/Users/mateuszochal/Downloads/few-shot-learning-through-an-information-retrieval-lens.bib",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 4 Sem 1/V0-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 2/Z-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 2/M-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 2/L-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 2/K-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 2/A-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 1/Week I-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/data/Year 3 Sem 1/Week A-Table 1.csv",
+		"/Users/mateuszochal/Documents/University/Personal/MyTimesheets/filterTimesheets.py",
+		"/Users/mateuszochal/Desktop/torch error on student compute",
+		"/Users/mateuszochal/Downloads/widget_state.json",
+		"/Users/mateuszochal/Documents/University/4th Year/RL/Code/cw/HFO/example/RL2019/.gitignore"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 497.0
+	},
+	"output.find_results":
+	{
+		"height": 522.0
+	},
+	"pinned_build_system": "Packages/User/AVRDUDE.sublime-build",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/University/Summer Internship 2017/zip_and_send.sh"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 270.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"on_button_press"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
