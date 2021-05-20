@@ -253,12 +253,18 @@
             <div id="s11" class="topmarg small-blog-left">
                 <h4>MetaNorm <a href="https://openreview.net/pdf?id=9z_dNsC4B5t" class="btn btn-default btn-sm" target="_blank">paper</a></h4>
                 <p>
+                    <ul>
                     <li>In MetaNorm, the statistics are inferred for new tasks based on the support set by leveraging the amortized inference technique, and using hypernetworks to generate the statistics for BatchNorm. </li>
                     <li>A function $f$ transforms the activation maps for each individual sample, and outputs an inferred statistics. </li>
                     <li>The average is calculated over all the inferred statistics to generate more accurate statistics. The networks $f$ are MLPs, one for each layer in the network (shared across channels), and generate the support and query moments during meta-training.</li>
+                    <li>$m$ is a random variable that represents the distribution of activations.</li>
+                    <li>$p(m)$ are defined as Gaussian distributions.</li>
+                    </ul>
                 </p>
                 <img src="metanorm_mu.jpg" class="blog">
                 <img src="metanorm_sigma.jpg" class="blog">
+                <img src="metanorm_kl.jpg" class="blog">
+                <img src="metanorm_loss.jpg" class="blog">
             </div>
         </div>
 
