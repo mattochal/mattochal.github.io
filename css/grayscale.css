@@ -673,6 +673,26 @@ div.small-blog-left > h1, h3, h2, h4, img {
   /*position: relative;*/
 }
 
+a.btn-no-marg {
+    margin: 0px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+button {
+    border-radius: 3;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    border: 1px solid #42dca3;
+    color: #42dca3;
+    background-color: transparent;
+}
+
 div.topmarg {
     margin: 5em 0em 0em 0em;
     padding: 5em 0em 0em 0em;

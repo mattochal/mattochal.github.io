@@ -23,10 +23,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100&family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
 
     <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
     </script>
+    
     <script type="text/javascript"
-      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 </head>
@@ -60,6 +66,7 @@
         <div class="col-lg-10 col-lg-offset-1 blog" >
             <div id="s1" class="topmarg small-blog-left">
                 <h2 style="text-align: center;">BatchNorm in Meta-Learning</h2>
+                <h4 style="text-align: center;">2021/05/20</h4>
                 <p>
                     In this blog post, I provide an overview on various Batch Normalization approaches in Meta-Learning. I cover the following:
                     <ul style='margin-top: -1em'>

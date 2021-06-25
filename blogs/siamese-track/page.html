@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Mateusz Ochal">
+
+    <link rel="icon" href="../../img/favicon.png">
+    <title>Mateusz Ochal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100&family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+
+    <script>
+       $(function() {
+          $('q').click(function() {
+             window.location = $(this).attr('cite');
+          });
+       });
+    </script>
+    
+    <script type="text/javascript"
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container" >
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav" >
+                    <li class="hidden"> <a href="#page-top"></a> </li>
+                    <li> <a class="page-scroll" href="#sintro">Intro</a> </li>
+                    <li> <a class="page-scroll" href="#s1">1</a> </li>
+                    <li> <a class="page-scroll" href="#s2">2</a> </li>
+                    <li> <a class="page-scroll" href="#s2b">3</a> </li>
+                    <li> <a class="page-scroll" href="#s3">4</a> </li>
+                    <li> <a class="page-scroll" href="#s4">5</a> </li>
+                    <li> <a class="page-scroll" href="#s5">6</a> </li>
+                    <li> <a class="page-scroll" href="#s6">7</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="height:5em"></div>
+
+    <section class="container content-section text-center my-section my-body" style="margin-top: 0; padding-top: 0;" >
+        <div class="col-lg-10 col-lg-offset-1 blog" >
+            <div id="sintro" class="topmarg small-blog-left">
+                <h2 style="text-align: center;">Fully-Convolutional Siamese Networks for Object Tracking</h2>
+                <h4 style="text-align: center;">2021/06/25</h4>
+                <p>
+                    In this blog post, I provide an overview on the popular few-shot object detection and tracking method: SiamFC (<a href="https://arxiv.org/pdf/1606.09549.pdf">paper</a>).
+                    <ul style='margin-top: -1em'>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s1">1</a> Overview </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s2">2</a> Method Details </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s2b">3</a> Training </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s3">4</a> Practical Details </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s4">5</a> Results </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s5">6</a> Limitations </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s6">7</a> Follow-up Work </li>
+                    </ul> 
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s1" class="topmarg small-blog-left">
+                <h4>Overview</h4>
+                <p><i>Problem.</i> Object detection and tracking methods aim to identify and track objects of interest across video frames. Common benchmarks initialise algorithms using a bounding box label from an initial video frame, then the algorithm has to automatically track the object's position across later frames without further input.</p>
+                <p><i>Proposed Solution.</i> In a nutshell, SiamFC turns the tracking problem into a matching problem, where candidate positions of the object of interests are compared to an exemplar image (defined by the bounding box in the initial frame). This results in a score map of potential object positions, and the position with the highest score, and above a certain threshold, is labelled as the object of interest. Their solution is very fast as it utilises cross-correlation (convolution) to parallelize comparisons using a GPU. Unlike more sophisticated trackers, SiamFC does not maintain any model or memory of past appearances, and no optical flow / histograms are used, and no regression is performed on the bounding box. Instead, the algorithm performs instance matching and selects the most similar position to the exemplar image.</p>
+                <img src="architecture.jpg" class="blog">
+            </div>
+        </div>
+
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s2" class="topmarg small-blog-left">
+                <h4>Method Details</h4>
+                <p>The function $f_\theta(z,x)$ returns a similarity score between an exemplar image $z$ and a candidate image $x$. Lets assume that x and z are the same size.</p>
+                <p style="text-align: center;">$f_\theta(z,x) = \varphi_\theta(z) \ast \varphi_\theta(x) + b \mathbb{1} $</p>
+                <p>where $\varphi$ is a feature extractor, $\ast$ is a dot product, $b \mathbb{1}$ is an extra bias term that is added depending on the location of the candidate image.</p>
+                <p>However, a search image will contain multiple possible candidate locations, and the size of the z and x will be different. Therefore, cross-correlation can be used to perform comparisons very efficiently across each spatial location of the search image, equivalent to a sliding window algorithm. The $\ast$ operator becomes cross-correlation, and the function $f$ returns a score matrix size $D \in \mathbb{z}^2$, where each value represents a similarity score between the candidate image at the corresponding location and the exemplar image.</p>
+                <p>The paper uses AlexNet (with total network stride $k=8$), an exemplar image of size $127 \times 127 \times 3$ pixels, and $255 \times 255 \times 3$ search image. The resulting score map is $17 \times 17 \times 1$.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s2b" class="topmarg small-blog-left">
+                <h4>Training</h4>
+                <p>The network is trained on positive and negative pairs, using logistic loss:</p>
+                <p style="text-align: center;">$ l(y[u], v[u]) = log \left ( 1 + exp(-y[u] \times v[u]) \right )$</p>
+                <p>where $v[u]$ is the real-valued score of a single exemplar-candidate pair, i.e. $v[u] = f_\theta(z, x[u])$ at the spacial location $u \in D$, and $y \in \{+1,-1\}$ is the ground-truth for that particular spatial location. The ground truth for a location $u \in D$ is defined as:</p>
+                <p style="text-align: center;"> 
+                    \[
+                        y[u] = 
+                        \begin{cases}
+                            +1 & \text{if} ~~ k||u-c|| \leq R\\
+                            -1 & \text{otherwise}
+                        \end{cases}
+                    \]
+                </p>
+                <p>where $k$ is the network stride (product of all strides in the network), $u$ is the spatial location in the score map, and $c$ is the centre of the mapped bounding box location, and $R$ is a predefined radius threshold. </p>
+                <p>Therefore, the score map loss is for the exemplar-candidate pairs is:</p>
+                <p style="text-align: center;">$L(y, v) = \frac{1}{|D|}  \Sigma_{u \in D} ~ {l(y[u], v[u])}$</p>
+
+                <p>The parameters of the conv-net $\theta$ are obtained by applying Stochastic Gradient Descent: </p>
+                <p style="text-align: center;">$argmin_\theta ~~ \mathbb{E}_{(z,x,y)} ~ L ( y, v )$</p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s3" class="topmarg small-blog-left">
+                <h4>Practical Details</h4>
+                <p><i>Resizing.</i> The paper adopts a resizing scheme, such that the exemplar image always has an area of $127^2$ pixels$^2$. Suppose an initial bounding box is of size ($w, h$), and there is an additional context margin of size $p=\frac{w+h}{4}$, therefore, an unscaled exemplar image is of size $(w+2p) \times (h+2p)$. The scale factor $s$ for the image is calculated as follows:</p>
+                <p style="text-align: center;">$s = \frac{127^2}{(w+2p) \times (h+2p)}$</p>
+                <p>In reality, the target object could change its relative size in the image. To account for this, the algorithm searches over 3 or 5 scales of the image which range from between up to 5% larger and up to 5% smaller. </p>
+                <img src="conv.jpg" class="blog">
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s4" class="topmarg small-blog-left">
+                <h4>Results</h4>
+                <p>SiamFC uses all 5 scales. The SiamFC_3s uses 3 scales.</p>
+                <p>The algorithms were evaluated on several benchmarks. Below are graphs for the OTB-13 dataset. The evaluation breaks down as: <ul>
+                    <li>OPE (one pass evaluation). This is the average precision / success rate of test sequence.</li>
+                    <li>TRE (temporal robustness evaluation). This is the average precision / success rate after initialising the algorithm at different temporal points of the sequence. </li>
+                    <li>SRE (spatial robustness evaluation). This is the average precision after initialising the algorithm with differently sized bounding boxes. </li>
+                </ul>
+                </p>
+                <p>The baselines that can run at frame-rate speeds are: Staple, LCT, CCT, SCT4, DLSSVM_NU, DSST, and KCFDP. </p>
+                <img src="ope.jpg" class="blog">
+                <img src="tre.jpg" class="blog">
+                <img src="sre.jpg" class="blog">
+                <img src="examples.jpg" class="blog">
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s5" class="topmarg small-blog-left">
+                <h4>Limitations</h4>
+                <p>This method however has a couple of obvious limitations. What might they be? <button class="btn-default" onclick="myFunction()">reveal</button> </p>
+                <div id="myDIV" style="display: none;">
+                    <ul>
+                        <li> Bounding box has a fixed aspect ratio. </li>
+                        <li> No 'true' tracking capability. </li>
+                        <li> Position search is greedy. It searches over all possible positions which is redundant.</li>
+                        <!-- <li> . </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s6" class="topmarg small-blog-left">
+                <h4>Some Follow-up Work</h4>
+                <p>Since 2016 when the paper was published several works have improved the method:<ul>
+                    <li>End-To-End Representation Learning for Correlation Filter Based Tracking, 2017 (<a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Valmadre_End-To-End_Representation_Learning_CVPR_2017_paper.html">paper</a>). It is a follow up work of the SiamFC paper which uses Correlation Filters (CF) as a closed-form solution for differentiable layer in the deep neural network, allowing the features by a network to be closely coupled with CF.</li>
+                    <li>High Performance Visual Tracking With Siamese Region Proposal Network, 2018 (<a href="https://openaccess.thecvf.com/content_cvpr_2018/html/Li_High_Performance_Visual_CVPR_2018_paper.html">paper</a>). Introduce Siamese-RPN, alleviating the need to perform multi-scale test and online fine-tuning. </li>
+                    <li>ECO: Efficient Convolution Operators for Tracking, 2017 (<a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Danelljan_ECO_Efficient_Convolution_CVPR_2017_paper.html">paper</a>). Introduce: (i) factorized convolution operators, which reduce the number of parameters in the model, (ii) a generative model for modelling training distribution, (iii) a model update strategy with reduced complexity and improved robustness. Perform real-time tracking with 65%AUC on OTB-2015.</li>
+                </ul></p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <!-- <div class="container text-center"> -->
+            <!-- <p>Copyright &copy; Mateusz Ochal 2021</p> -->
+        <!-- </div> -->
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../../js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/grayscale.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script> -->
+
+
+</body>
+
+</html>

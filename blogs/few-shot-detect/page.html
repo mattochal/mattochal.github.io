@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Mateusz Ochal">
+
+    <link rel="icon" href="../../img/favicon.png">
+    <title>Mateusz Ochal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100&family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+
+    <script>
+       $(function() {
+          $('q').click(function() {
+             window.location = $(this).attr('cite');
+          });
+       });
+    </script>
+    
+    <script type="text/javascript"
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container" >
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav" >
+                    <li class="hidden"> <a href="#page-top"></a> </li>
+                    <li> <a class="page-scroll" href="#sintro">Intro</a> </li>
+                    <li> <a class="page-scroll" href="#s1">1</a> </li>
+                    <li> <a class="page-scroll" href="#s2">2</a> </li>
+                    <li> <a class="page-scroll" href="#s3">3</a> </li>
+                    <li> <a class="page-scroll" href="#s4">4</a> </li>
+                    <li> <a class="page-scroll" href="#s5">5</a> </li>
+                    <li> <a class="page-scroll" href="#s6">6</a> </li>
+                    <li> <a class="page-scroll" href="#s7">7</a> </li>
+                    <li> <a class="page-scroll" href="#s8">8</a> </li>
+                    <li> <a class="page-scroll" href="#s9">9</a> </li>
+                    <li> <a class="page-scroll" href="#s10">10</a> </li>
+                    <li> <a class="page-scroll" href="#s11">11</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="height:5em"></div>
+
+    <section class="container content-section text-center my-section my-body" style="margin-top: 0; padding-top: 0;">
+        <div class="col-lg-10 col-lg-offset-1 blog" >
+            <div id="sintro" class="topmarg small-blog-left">
+                <h2 style="text-align: center;">Few-Shot Object Detection and Tracking</h2>
+                <p>
+                    In this blog post, I provide a VERY brief overview about few-shot object detection and tracking. Namely, I will cover the following:
+                    <ul style='margin-top: -1em'>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s1">1</a> Task disambiguation </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s2">2</a> Key challenges, evaluation criteria, and benchmarks </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s3">3</a> Taxonomy of Methods </li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s4">4</a> Method 1</li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s5">5</a> Method 2</li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s6">6</a> Method 3</li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s7">7</a> Method 4</li>
+                        <li><a class="btn btn-default btn-sm page-scroll btn-no-marg" href="#s8">8</a> Open Challenges</li>
+                    </ul> 
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s1" class="topmarg small-blog-left">
+                <h4>Task Disambiguation</h4>
+                <p>
+                    Object detection and tracking has been studied extensively throughout the recent years (<a href="">paper</a>). The subject has many real-world applications from security (<a href="">paper</a>), through autonomy (<a href="">paper</a>), to entertainment (<a href="">paper</a>). As a result, the community has produced a multitude of papers on this topic. In literature, the subject has been referred to by various names:
+                    <ul>
+                        <li> Object Detection (<a href="https://link.springer.com/content/pdf/10.1007/s11263-019-01247-4.pdf">paper</a>). More broadly, the task of indentifying the presence and location of objects is refered to as object detection. The goal is achieve high accuracy and high efficiency methods. Examples of generic methods include Fast-RCNN, Mask-RCNN, etc. Specific object detection methods (e.g. for faces, pedestrians, etc) have received a fair amount of attention. Object detection can be applied to single images, but many real-world applications rely on their real-time efficiency to work on individual video frames. However, in the purest form, object detection methods lack the ability to track and reidentify objects across the frames. </li>
+                        <li> Visual Object Tracking (VOT). This term has been popularised by the yearly VOT challenge competition (<a href="https://votchallenge.net/">website</a>, <a href="http://prints.vicos.si/publications/304">2013</a>, <a href="https://www.votchallenge.net/vot2014/download/visual-object-tracking.pdf">2014</a>, <a href="https://openaccess.thecvf.com/content_iccv_2015_workshops/w14/papers/Kristan_The_Visual_Object_ICCV_2015_paper.pdf">2015</a>, <a href="https://link.springer.com/chapter/10.1007%2F978-3-319-48881-3_54">2016</a>, <a href="https://openaccess.thecvf.com/content_ICCV_2017_workshops/w28/html/Kristan_The_Visual_Object_ICCV_2017_paper.html">2017</a>, <a href="https://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Kristan_The_sixth_Visual_Object_Tracking_VOT2018_challenge_results_ECCVW_2018_paper.html">2018</a>, <a href="https://openaccess.thecvf.com/content_ICCVW_2019/html/VOT/Kristan_The_Seventh_Visual_Object_Tracking_VOT2019_Challenge_Results_ICCVW_2019_paper.html">2019</a>, <a href="https://link.springer.com/chapter/10.1007/978-3-030-68238-5_39">2020</a>), which initilly considered single-camera, single-target, model-free (i.e. only the bounding box of object in the first frame is provided at initialization), short-term (i.e. no re-detection is applied after the target is lost), causal trackers (i.e. tracking does not rely on future frames or frames prior to initialization, to infer current object location). </li>
+                        <li> Video Object Segmentation and Tracking (VOST) </li>
+                        <li> Segmentation-based Object Tracking (SOT) </li>
+                        <li> Video Object Segmentation (VOS) </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        "https://www.robots.ox.ac.uk/~vgg/publications/2016/BertinettoFC16/bertinettofc16.pdf"
+
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s2" class="topmarg small-blog-left">
+                <h4>Key Challenges, Evaluation, and Benchmarks</h4>
+                <p>
+                    Object detection and tracking have many real-world challenges:
+                    <ul>
+                        <li><b>Illumination change (illumination variation)</b> is defined as the average of the
+                            absolute differences between the object intensity in the
+                            first and remaining frames.
+                            <b>Object size change (scale variation)</b> is the sum of averaged local size
+                            changes, where the local size change at frame t is defined as the average of absolute differences between
+                            the bounding box area in frame t and past fifteen
+                            frame.
+                            <b>Object motion (fast motion)</b> is the average of absolute differences
+                            between ground truth center positions in consecutive
+                            frames.
+                            <b>Clutter</b> is the average of per-frame distances between
+                            two histograms: one extracted from within the ground
+                            truth bounding box and one from an enlarged area (by
+                            factor 1.5 outside of the bounding box.
+                            <b>Camera motion</b> is defined as the average of translation
+                            vector lengths estimated by key-point-based RANSAC
+                            between consecutive frames.
+                            <b>Blur</b> was measured by the Bayes-spectral-entropy
+                            camera focus measure.
+                            <b>Aspect-ratio change</b> is defined as the average of perframe aspect ratio changes. The aspect ratio change at
+                            frame t is calculated as the ratio of the bounding box width and height in frame t divided by the ratio of the bounding box width and height in the first frame.
+                            <b>Object color change</b> defined as the change of the average hue value inside the bounding box.
+                            <b>Deformation</b> is calculated by dividing the images into 8 × 8 grid of cells and computing the sum of squared differences of averaged pixel intensity over the cells in current and first frame.
+                            <b>Scene complexity</b> represents the level of randomness (entropy) in the frames and it was calculated as
+                            P e = 255 i=0 bi log bi, where b_i is the number of pixels with value equal to i.
+                            <b>Absolute motion.</b> is the median of the absolute motion difference of the bounding box center points of the first frame and current one.
+                            <b>Rotation.</b>
+                            <b>Camera Motion</b>
+                        <li>In-Plane Rotation</li>
+                        <li>Illumination Variation</li>
+                        <li>Low Resolution</li>
+                        <li>Motion Blur</li>
+                        <li>Occlusion</li>
+                        <li>Camera Motion</li>
+                        <li>Out-of-Plane Rotation</li>
+                    </ul>
+                </p>
+                <p>
+                    Several benchmarks can be used to evaluate an algorithm's performance. <ul>
+                        <li>OTB (<a href="">paper</a>). Online Tracking Benchmark </li>
+                        <li>VOT2016 (<a href="">paper</a>). Visual Object Tracking. Resets (reinitializes) the tracker on a later frame once the tracker looses the object during a sequence. Re-sets reduce the variance of tracker performance, meaning that no reset metrics (those that allow the sequence to run to the end) require a larger sample to become a reliable measure of the performances. </li>
+                        <li>VOT-TIR. Visual Object Tracking with focus on infra-red and thermal imagery. </li>
+                        <li>ALOV (<a href="">paper</a>). Amsterdam Library of Ordinary Videos. Measures tracking performance using the F-measure at 0.5 overlap. </li>
+                    </ul>
+                </p>
+                <p>
+                    How algorithms are able to cope with these challenges can sometimes be expressed by a single metric: 
+                    <ul>
+                        <li>Accuracy</li>
+                        <li>AUC</li>
+                        <li>Precision Score (used by OTB) - represents the percentage of frames for which the center-distance error between the predicted and the annotated target is less than 20 pixels. The normalized precision score takes into account the size of the objects when comparing the distances. </li>
+                        <li>Success Score (used by OTB) - represents an average overlap between predicted target and ground-truth. Concretely, it is the area under a success plot. The success plot shows the percentage of frames for which the overlap measure exceeds a threshold, w.r.t. different thresholds. </li>
+                        <li>AEO</li>
+                        <li>A - accuracy - predicts how well the algorithm is able to predict the bounding box location w.r.t. the ground-truth (i.e. average intersection over union across the almost entire sequence (excluding the first ~10 frames after initialization)).</li>
+                        <li>R - robustness - measures how many times the tracker looses the target during the target during tracking (i.e. intersection between ground truth and prediction is zero). </li>
+                        <li>AR rank plots show the joint accuracy-robusteness rank space. </li>
+                        <li>Survival Curves - </li>
+                        <li>Kaplan Meier statistics - </li>
+                        <li>Grubs testing - </li>
+                        <li>Pascals' overlap. </li> 
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s3" class="topmarg small-blog-left">
+                <h4>Taxonomy of Methods</h4>
+                <p>Object detection and tracking methods can be broken down into multiple categories.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s4" class="topmarg small-blog-left">
+                <h4>Method 1</h4>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s5" class="topmarg small-blog-left">
+                <h4>Method 2</h4>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s6" class="topmarg small-blog-left">
+                <h4>Method 3</h4>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s7" class="topmarg small-blog-left">
+                <h4>Method 4</h4>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-1 blog">
+            <div id="s8" class="topmarg small-blog-left">
+                <h4>Open Challenges</h4>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Mateusz Ochal 2021</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../../js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/grayscale.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script> -->
+
+
+</body>
+
+</html>
